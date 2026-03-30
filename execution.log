@@ -1,0 +1,16 @@
+2026-03-25 20:08:46,174 - INICIO | Algoritmo: Insertion Sort | Tamanho: 1000
+2026-03-25 20:08:46,187 - FIM | Algoritmo: Insertion Sort | Tempo: 0.012804s
+2026-03-25 20:08:46,187 - INICIO | Algoritmo: Merge Sort | Tamanho: 1000
+2026-03-25 20:08:46,189 - FIM | Algoritmo: Merge Sort | Tempo: 0.001615s
+2026-03-25 20:08:46,190 - INICIO | Algoritmo: Insertion Sort | Tamanho: 5000
+2026-03-25 20:08:46,518 - FIM | Algoritmo: Insertion Sort | Tempo: 0.328409s
+2026-03-25 20:08:46,519 - INICIO | Algoritmo: Merge Sort | Tamanho: 5000
+2026-03-25 20:08:46,526 - FIM | Algoritmo: Merge Sort | Tempo: 0.007414s
+2026-03-25 20:08:46,527 - INICIO | Algoritmo: Insertion Sort | Tamanho: 10000
+2026-03-25 20:08:47,961 - FIM | Algoritmo: Insertion Sort | Tempo: 1.434335s
+2026-03-25 20:08:47,962 - INICIO | Algoritmo: Merge Sort | Tamanho: 10000
+2026-03-25 20:08:47,980 - FIM | Algoritmo: Merge Sort | Tempo: 0.018277s
+2026-03-25 20:08:47,982 - INICIO | Algoritmo: Insertion Sort | Tamanho: 50000
+2026-03-25 20:09:23,434 - FIM | Algoritmo: Insertion Sort | Tempo: 35.451950s
+2026-03-25 20:09:23,435 - INICIO | Algoritmo: Merge Sort | Tamanho: 50000
+2026-03-25 20:09:23,533 - FIM | Algoritmo: Merge Sort | Tempo: 0.097400s
