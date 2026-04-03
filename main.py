@@ -2,11 +2,12 @@ import json
 import time
 from algorithms.insertion_sort import insertion_sort
 from algorithms.merge_sort import merge_sort
+from algorithms.bubble_sort import bubble_sort
 from utils.logger import log_inicio, log_fim
 
 
 def medir_tempo(algoritmo, dados, nome, tamanho):
-    dados_copia = dados.copy()  # evita interferência entre algoritmos
+    dados_copia = dados.copy()  
 
     log_inicio(nome, tamanho)
 
@@ -32,12 +33,20 @@ if __name__ == "__main__":
     for tamanho, dados in datasets.items():
         print(f"\nTamanho: {tamanho}")
 
+        # Insertion Sort
         tempo_insertion = medir_tempo(
             insertion_sort, dados, "Insertion Sort", tamanho
         )
         print(f"Insertion Sort: {tempo_insertion:.6f}s")
 
+        # Merge Sort
         tempo_merge = medir_tempo(
             merge_sort, dados, "Merge Sort", tamanho
         )
         print(f"Merge Sort: {tempo_merge:.6f}s")
+
+        # Bubble Sort
+        tempo_bubble = medir_tempo(
+            bubble_sort, dados, "Bubble Sort", tamanho
+        )
+        print(f"Bubble Sort: {tempo_bubble:.6f}s")

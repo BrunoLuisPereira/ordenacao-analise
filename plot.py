@@ -1,8 +1,10 @@
 import json
 import time
 import matplotlib.pyplot as plt
+
 from algorithms.insertion_sort import insertion_sort
 from algorithms.merge_sort import merge_sort
+from algorithms.bubble_sort import bubble_sort
 
 
 def medir_tempo(algoritmo, dados):
@@ -24,6 +26,7 @@ def gerar_grafico():
     tamanhos = []
     tempos_insertion = []
     tempos_merge = []
+    tempos_bubble = []
 
     for tamanho, dados in datasets.items():
         tamanho_int = int(tamanho)
@@ -31,15 +34,16 @@ def gerar_grafico():
 
         tempos_insertion.append(medir_tempo(insertion_sort, dados))
         tempos_merge.append(medir_tempo(merge_sort, dados))
+        tempos_bubble.append(medir_tempo(bubble_sort, dados))
 
     plt.plot(tamanhos, tempos_insertion, marker='o', label='Insertion Sort')
     plt.plot(tamanhos, tempos_merge, marker='o', label='Merge Sort')
+    plt.plot(tamanhos, tempos_bubble, marker='o', label='Bubble Sort')
 
     plt.xlabel("Tamanho da Entrada")
     plt.ylabel("Tempo de Execução (s)")
     plt.title("Comparação de Algoritmos de Ordenação")
     plt.legend()
-
     plt.grid()
 
     plt.show()

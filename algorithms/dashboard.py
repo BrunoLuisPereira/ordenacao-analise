@@ -1,8 +1,10 @@
 import json
 import time
 import streamlit as st
+
 from algorithms.insertion_sort import insertion_sort
 from algorithms.merge_sort import merge_sort
+from algorithms.bubble_sort import bubble_sort
 
 
 def medir_tempo(algoritmo, dados):
@@ -25,6 +27,7 @@ datasets = carregar_dados()
 tamanhos = []
 tempos_insertion = []
 tempos_merge = []
+tempos_bubble = []
 
 for tamanho, dados in datasets.items():
     tamanho_int = int(tamanho)
@@ -32,12 +35,14 @@ for tamanho, dados in datasets.items():
 
     tempos_insertion.append(medir_tempo(insertion_sort, dados))
     tempos_merge.append(medir_tempo(merge_sort, dados))
+    tempos_bubble.append(medir_tempo(bubble_sort, dados))
 
 st.subheader("Tempo de Execução dos Algoritmos")
 
 st.line_chart({
     "Insertion Sort": tempos_insertion,
-    "Merge Sort": tempos_merge
+    "Merge Sort": tempos_merge,
+    "Bubble Sort": tempos_bubble
 })
 
 st.write("Tamanhos analisados:", tamanhos)
