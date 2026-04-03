@@ -4,20 +4,28 @@ from algorithms.insertion_sort import insertion_sort
 from algorithms.merge_sort import merge_sort
 from algorithms.bubble_sort import bubble_sort
 from utils.logger import log_inicio, log_fim
+from utils.otel_config import tracer
 
 
 def medir_tempo(algoritmo, dados, nome, tamanho):
-    dados_copia = dados.copy()  
+    dados_copia = dados.copy()
 
-    log_inicio(nome, tamanho)
+    # 🔥 OpenTelemetry começa aqui
+    with tracer.start_as_current_span(nome) as span:
+        span.set_attribute("algoritmo", nome)
+        span.set_attribute("tamanho_entrada", tamanho)
 
-    inicio = time.time()
-    algoritmo(dados_copia)
-    fim = time.time()
+        log_inicio(nome, tamanho)
 
-    tempo = fim - inicio
+        inicio = time.time()
+        algoritmo(dados_copia)
+        fim = time.time()
 
-    log_fim(nome, tempo)
+        tempo = fim - inicio
+
+        span.set_attribute("tempo_execucao", tempo)
+
+        log_fim(nome, tempo)
 
     return tempo
 
